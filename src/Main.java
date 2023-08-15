@@ -1,3 +1,5 @@
+import Animales.Animales;
+import Animales.Gato;
 import BancosYCuentas.CuentaAhorros;
 import BancosYCuentas.CuentaCorriente;
 import BancosYCuentas.SisBanco;
@@ -24,7 +26,8 @@ public class Main {
         //sistemaNotificaciones();
         //sistemaBancos();
         //cartasPoker();
-        tiendaOnline();
+        //tiendaOnline();
+        animalesEjercicio();
     };
     private static String formatDecimal(double value) {
         return String.format("%.2f", value);
@@ -118,7 +121,15 @@ public class Main {
                 System.out.println(producto.mostrarDetalles());
             }
             System.out.println();
+    }
 
+    public static void animalesEjercicio(){
+
+        Animales[] animalesArray = {new Gato(), new Animales.Pajaro()};
+
+        for (Animales animal :  animalesArray) {
+           animal.hacerSonido();
+        }
 
     }
 }
