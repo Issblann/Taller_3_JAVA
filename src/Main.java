@@ -1,5 +1,7 @@
 import Animales.Animales;
 import Animales.Gato;
+import Animales.Pajaro;
+import Animales.Perro;
 import BancosYCuentas.CuentaAhorros;
 import BancosYCuentas.CuentaCorriente;
 import BancosYCuentas.SisBanco;
@@ -15,7 +17,7 @@ import Sis_Notificaciones.NotificacionesPush;
 import Sis_Notificaciones.TiposNotificaciones;
 import TiendaOnline.*;
 
-import java.awt.geom.Area;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -125,7 +127,7 @@ public class Main {
 
     public static void animalesEjercicio(){
 
-        Animales[] animalesArray = {new Gato(), new Animales.Pajaro()};
+        Animales[] animalesArray = {new Gato(), new Pajaro(), new Perro()};
 
         for (Animales animal :  animalesArray) {
            animal.hacerSonido();
