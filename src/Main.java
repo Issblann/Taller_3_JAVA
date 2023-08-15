@@ -4,13 +4,23 @@ import Animales.Pajaro;
 import Animales.Perro;
 import BancosYCuentas.CuentaAhorros;
 import BancosYCuentas.CuentaCorriente;
-import BancosYCuentas.SisBanco;
 import Cartas.Baraja;
 import Cartas.Carta;
+import EmpleadosYSalarios.EmpleadoAsalariado;
+import EmpleadosYSalarios.EmpleadoHoras;
+import EmpleadosYSalarios.TipoEmpleados;
+import FigurasLienzo.Dibujable;
+import FigurasLienzo.Lienzo;
+import FigurasLienzo.CirculoDeFigurasLienzo;
+import FigurasLienzo.Rectangulo;
 import Figuras_Geometricas.Circulo;
 import Figuras_Geometricas.Cuadrado;
 import Figuras_Geometricas.Figura;
 import Figuras_Geometricas.Triangulo;
+import Instrumentos.Guitarra;
+import Instrumentos.Instrumento;
+import Instrumentos.Piano;
+import Instrumentos.Violin;
 import Sis_Notificaciones.CorreoElectronico;
 import Sis_Notificaciones.MensajeTexto;
 import Sis_Notificaciones.NotificacionesPush;
@@ -29,7 +39,11 @@ public class Main {
         //sistemaBancos();
         //cartasPoker();
         //tiendaOnline();
-        animalesEjercicio();
+        //animalesEjercicio();
+        //empleadosYSalarios();
+        //instrumentos();
+        //figurasLienzo();
+
     };
     private static String formatDecimal(double value) {
         return String.format("%.2f", value);
@@ -134,4 +148,37 @@ public class Main {
         }
 
     }
+
+    public static void empleadosYSalarios(){
+
+        TipoEmpleados[] tipoEmpleadosArray = {new EmpleadoHoras(3700, 40), new EmpleadoAsalariado(300000, 150000, 2000000)};
+
+        for (TipoEmpleados empleado: tipoEmpleadosArray) {
+            empleado.calcularSalario();
+        }
+
+    }
+
+    public static void instrumentos(){
+
+        Instrumento[] instrumentos = {new Guitarra(), new Piano(), new Violin()};
+
+        for (Instrumento instrumento: instrumentos) {
+            instrumento.tocarInstrumento();
+        }
+    }
+
+    public static void figurasLienzo(){
+
+        Dibujable[] figuras = new Dibujable[]{
+                new CirculoDeFigurasLienzo(),
+                new Rectangulo()
+        };
+
+
+        Lienzo lienzo = new Lienzo(figuras);
+        lienzo.dibujarTodo();
+
+    }
+
 }
